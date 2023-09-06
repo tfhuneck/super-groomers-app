@@ -1,13 +1,122 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5fafe;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('./images/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+.logo{
+  height: 8rem;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  top: 2rem;
+}
+.home{
+  margin-top: 13rem;
+  min-height: 90vh;
+}
+.heading {
+  color: #324983;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: normal;
+  max-width: 30vw;
+}
+.button {
+  color: #ffff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  background-color: #5379DA;
+  border-radius: 0.5rem;
+  border: 1px solid #5379DA;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  display: flex;
+  margin: 1rem;
+  padding: 1rem 1.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  max-width: 16rem;
+  transition: all 0.5s;
+}
+.button:hover{
+  color: #F6B610;
+  background-color: #5379DA;
+  transform: scale(1.02);
+  box-shadow: 0px 3px 5px 10px rgba(16, 24, 40, 0.05);
+}
+.button:active{
+  color: #ffff !important;
+  background-color: #496bc2 !important;
+  transform: scale(0.97);
+  box-shadow: 0px 3px 5px 10px rgba(16, 24, 40, 0.05);
+}
+.city-dropdown{
+  width: 20rem;
+  margin: 1rem;
+}
+.drop-form{
+  margin-top: 0.5rem;
+  color: #667085;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.macbook-pro .div {
+  background-color: #f5fafe;
+  height: 1117px;
+  position: relative;
+  width: 1728px;
+}
+
+.macbook-pro .group {
+  height: 127px;
+  left: 695px;
+  position: absolute;
+  top: 62px;
+  width: 338px;
+}
+
+
+
+.macbook-pro .overlap-group {
+  height: 599px;
+  left: 0;
+  position: absolute;
+  top: 513px;
+  width: 1728px;
+}
+
+
+
+
+
+.macbook-pro .design-component-instance-node {
+  align-self: stretch !important;
+  background-color: #5379d9 !important;
+  border-color: unset !important;
+  display: flex !important;
+  flex: 1 !important;
+  flex-grow: 1 !important;
+}
+
+.macbook-pro .input-field-instance {
+  left: 725px !important;
+  position: absolute !important;
+  top: 400px !important;
+}
+
+.macbook-pro .input-field-2 {
+  height: 20px !important;
+  margin-left: -1px !important;
+  position: relative !important;
+  width: 20px !important;
 }
