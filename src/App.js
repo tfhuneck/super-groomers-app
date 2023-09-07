@@ -1,12 +1,20 @@
-import Home from './components/Home'
 import logo from './images/logo-name.png'
+import Home from './components/Home'
+import Selection from './components/Selection';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
  
 
 function App() {
   return (
     <>
-      <Home />
-      <img src={logo} className='logo' />
+      <BrowserRouter>
+        <img src={logo} className='logo' />
+        <Routes>
+          <Route path='/' element={ <Home />}/>
+          <Route path='/select' element={ <Selection />}/>
+          
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

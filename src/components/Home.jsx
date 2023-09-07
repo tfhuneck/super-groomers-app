@@ -18,6 +18,7 @@ const Home = () => {
                         </label>
                         <select class="form-select drop-form" id="city">
                             <option>Roseville</option>
+                            <option>Folsom</option>
                             <option>Sacramento</option>
                             <option>West Sacramento</option>
                             <option>Davis</option>
