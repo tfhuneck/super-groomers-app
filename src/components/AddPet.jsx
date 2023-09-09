@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../App";
 
-const Selection = () => {
+const AddPet = () => {
     
     const navigate                      = useNavigate();
     const [ bathPrice, setBathPrice ]   = useState(75)
@@ -121,7 +121,7 @@ const Selection = () => {
         const breed = document.getElementById('breed').value;
         const note = document.getElementById('note').value;
 
-        let pets = []
+        let pets = data.pets
         let petData = {
             'name': name,
             'size': size,
@@ -306,4 +306,4 @@ const Selection = () => {
     )
 }
 
-export default Selection
+export default AddPet;
