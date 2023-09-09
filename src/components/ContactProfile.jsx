@@ -7,7 +7,7 @@ const ContactProfile = (props) => {
 
 
     const handleEdit = () => {
-        navigate('/edit')
+        navigate('/contact')
     }
 
     // useEffect(()=>{

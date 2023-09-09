@@ -7,6 +7,10 @@ import Pet from './PetProfile';
 const VerifyPet = ()=> {
     const navigate                      = useNavigate();  
     const [ data, setData ]             = useContext(DataContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     
     const handleNext = async() => {
         

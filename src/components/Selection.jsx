@@ -9,6 +9,10 @@ import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../App";
 
 const Selection = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     
     const navigate                      = useNavigate();
     const [ bathPrice, setBathPrice ]   = useState(75)

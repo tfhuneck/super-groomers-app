@@ -1,8 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Success = () => {
 
     const navigate              = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     const handleButton = () => {
         navigate('/')

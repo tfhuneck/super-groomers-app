@@ -7,7 +7,7 @@ const Times = (props) => {
 
 
     const handleEdit = () => {
-        navigate('/edit')
+        navigate('/time')
     }
 
     // useEffect(()=>{

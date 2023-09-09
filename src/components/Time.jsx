@@ -10,6 +10,10 @@ const Time = () => {
     const [ date2, setDate2 ]           = useState();
     const [ date3, setDate3 ]           = useState();
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const handleNext = async() => {
         const time1 = document.getElementById('time1').value;
         const time2 = document.getElementById('time2').value;

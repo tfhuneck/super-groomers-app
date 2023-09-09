@@ -44,7 +44,7 @@ const Pet = (props) => {
     }
 
     const handleEdit = () => {
-        navigate('/edit')
+        navigate('/select')
     }
 
     // useEffect(()=>{

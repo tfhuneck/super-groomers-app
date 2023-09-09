@@ -8,6 +8,10 @@ const Contact = () => {
     const navigate                      = useNavigate();
     const [ data, setData ]             = useContext(DataContext);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const handleNext = async() => {
         const firstname = document.getElementById('firstname').value;
         const lastname  = document.getElementById('lastname').value;
