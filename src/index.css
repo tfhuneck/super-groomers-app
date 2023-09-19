@@ -388,3 +388,43 @@ color: rgb(19, 18, 18);
   margin-left: 0.25rem;
   margin-right: 1rem;
 }
+
+@media only screen and (max-width: 990px) {
+  .heading {
+    max-width: 70vw;
+  }
+  .photo{
+   text-align: center;
+   position: relative;
+   left: auto;
+   margin-bottom: 2rem;
+  }
+  .back{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 5rem;
+  }
+  .verify-pet{  
+    margin-top: 13rem;
+    width: 90vw;
+    min-height: 65rem;
+  }
+  .contact{
+    width: 90vw;
+  }
+  .form-group{
+    max-width: 80vw !important;
+    margin-left: 0rem;
+  }
+  #street, #city, #state, #zip{
+    width: fit-content;
+    margin-left: 0rem;
+  }
+  #firstname, #lastname{
+    transform: translate(-1rem);
+  }
+  .time{
+    width: 90vw;
+  }
+}

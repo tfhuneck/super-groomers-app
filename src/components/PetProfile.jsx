@@ -37,7 +37,7 @@ const Pet = (props) => {
         }
         if (service == 'teeth') {
                 image = teeth;
-        }
+        } 
        return image;
 
       
