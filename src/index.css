@@ -390,6 +390,11 @@ color: rgb(19, 18, 18);
 }
 
 @media only screen and (max-width: 900px) {
+  body {
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: bottom;
+  }
   .heading {
     max-width: 70vw;
   }
