@@ -18,8 +18,6 @@ const Time = () => {
         const time1 = document.getElementById('time1').value;
         const time2 = document.getElementById('time2').value;
         const time3 = document.getElementById('time3').value;
-
-        console.log(date1)
        
         let time = {
            date1 : date1,
