@@ -15,9 +15,9 @@ const Selection = () => {
       }, [])
     
     const navigate                      = useNavigate();
-    const [ bathPrice, setBathPrice ]   = useState(75)
-    const [ cutPrice, setCutPrice ]     = useState(25)
-    const [ clipPrice, setClipPrice ]   = useState(25)
+    const [ bathPrice, setBathPrice ]   = useState(20)
+    const [ cutPrice, setCutPrice ]     = useState(100)
+    const [ clipPrice, setClipPrice ]   = useState(20)
     const [ teethPrice, setTeethPrice ] = useState(15)
     const [ image, setImage ]           = useState();  
     const [ data, setData ]             = useContext(DataContext);
@@ -99,33 +99,35 @@ const Selection = () => {
         let value = e.target.value;
         console.log(value)
         if(value == 'small'){
-            setBathPrice(75);
-            setCutPrice(25);
-            setClipPrice(25);
-            setTeethPrice(15);
+            setBathPrice(20);
+            setCutPrice(100);
+            // setClipPrice(25);
+            // setTeethPrice(15);
         }
         if(value == 'medium'){
-            setBathPrice(100);
-            setCutPrice(50);
-            setClipPrice(50);
-            setTeethPrice(30);
+            setBathPrice(20);
+            setCutPrice(105);
+            // setClipPrice(50);
+            // setTeethPrice(30);
         }
         if(value == 'large'){
-            setBathPrice(125);
-            setCutPrice(75);
-            setClipPrice(75);
-            setTeethPrice(45);
+            setBathPrice(25);
+            setCutPrice(150);
+            // setClipPrice(75);
+            // setTeethPrice(45);
         }
     }
-        
+
     const handleNext = async() => {
         const name = document.getElementById('name').value;
         const size = document.getElementById('size').value;
         const energy = document.getElementById('energy').value;
         const breed = document.getElementById('breed').value;
         const note = document.getElementById('note').value;
-
+        
         let pets = []
+        // if we add multiple pets uncomment line below
+        // data.pets ?  pets = data.pets :  pets = [];
         let petData = {
             'name': name,
             'size': size,
@@ -136,19 +138,59 @@ const Selection = () => {
             'image': image
         }
         pets.push(petData);
-        let area = data
-        const updateData = {area, pets};
+        // let area = data
+        // const updateData = {area, pets};
+        const updateData = {...data, pets};
+        // console.log('TESTING THIS' + )
         setData(updateData);
         navigate('/verifypet')
+    }
+    
+    const handleBack = () => {
+        navigate('/')
     }
 
     useEffect(()=>{
         console.log(data)
     }, [data])
 
-    const handleBack = () => {
-        navigate('/')
-    }
+
+    // =========== effect to render elements with data for edit ===========
+    useEffect(() => {
+        const name = document.getElementById('name');
+        const size = document.getElementById('size');
+        const energy = document.getElementById('energy');
+        const breed = document.getElementById('breed');
+        const note = document.getElementById('note');
+
+        if (data.pets){
+            name.value      = data.pets[0].name;
+            size.value      = data.pets[0].size;
+            energy.value    = data.pets[0].energy;
+            breed.value     = data.pets[0].breed;
+            note.value      = data.pets[0].note;
+
+            if(data.pets[0].size == 'small'){
+                setBathPrice(20);
+                setCutPrice(100);
+                // setClipPrice(25);
+                // setTeethPrice(15);
+            }
+            if(data.pets[0].size == 'medium'){
+                setBathPrice(20);
+                setCutPrice(105);
+                // setClipPrice(50);
+                // setTeethPrice(30);
+            }
+            if(data.pets[0].size == 'large'){
+                setBathPrice(25);
+                setCutPrice(150);
+                // setClipPrice(75);
+                // setTeethPrice(45);
+            }
+            
+        }
+    }, [])
 
     return (
        <>
@@ -158,14 +200,15 @@ const Selection = () => {
                     <p className="heading2">Give us some details on your pet and services needs</p>
                 </div>
             </div>
-            <div className='photo'>
-                {/* <img src={camera} className='camera' />
-                <label htmlFor='upload-image' className='add-photo'>
-                    Add photo
-                </label>
-                <input type="file" accept='image/jpeg, image/jpg, image/png' onChange={handleImageUpload} name="image" id='upload-image' className='upload-img' /> */}
-                <Avatar />
-            </div>
+            {/* add Photo box disabled for now  */}
+                        {/* <div className='photo'> */}
+                            {/* <img src={camera} className='camera' />
+                            <label htmlFor='upload-image' className='add-photo'>
+                                Add photo
+                            </label>
+                            <input type="file" accept='image/jpeg, image/jpg, image/png' onChange={handleImageUpload} name="image" id='upload-image' className='upload-img' /> */}
+                            {/* <Avatar /> */}
+                        {/* </div> */}
             <div className="row"> 
                 <div className="col d-flex justify-content-center">
                     <div className="form-group">
@@ -255,19 +298,10 @@ const Selection = () => {
                         <label  > 
                             Services needed
                         </label>
-                        <button className="services" id='bath'  onClick={() => toggleService('bath')} >
-                            <img src={bath} className='service-icon'/>
-                            <span className='services-text'>
-                                Bath
-                            </span>
-                            <div className='amount' id='bath-amount'>
-                                $ {bathPrice.toFixed(2)}
-                            </div>
-                        </button>
                         <button className="services" id='cut' onClick={() => toggleService('cut')}>
                             <img src={cut} className='service-icon'/>
                             <span className='services-text'>
-                                Cut
+                                Cut and Bath
                             </span>
                             <div className='amount' id='cut-amount'>
                                 $ {cutPrice.toFixed(2)}
@@ -289,6 +323,15 @@ const Selection = () => {
                             </span>
                             <div className='amount' id='teeth-amount'>
                                 $ {teethPrice.toFixed(2)}
+                            </div>
+                        </button>
+                        <button className="services" id='bath'  onClick={() => toggleService('bath')} >
+                            <img src={bath} className='service-icon'/>
+                            <span className='services-text'>
+                                Upgrade Shampoo
+                            </span>
+                            <div className='amount' id='bath-amount'>
+                                $ {bathPrice.toFixed(2)}
                             </div>
                         </button>
                     </div>

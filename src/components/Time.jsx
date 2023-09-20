@@ -30,10 +30,10 @@ const Time = () => {
            time3 : time3
         }
 
-        let area = data.area;
-        let pets = data.pets;
-        let contact = data.contact
-        const updateData = {area, pets, contact, time};
+        // let area = data.area;
+        // let pets = data.pets;
+        // let contact = data.contact
+        const updateData = {...data, time};
         setData(updateData);
         navigate('/confirm')
     }
@@ -45,6 +45,28 @@ const Time = () => {
     const handleBack = () => {
         navigate('/contact')
     }
+
+    useEffect(() => {
+        const time1 = document.getElementById('time1');
+        const time2 = document.getElementById('time2');
+        const time3 = document.getElementById('time3');
+        const date1 = document.getElementById('date1');
+        const date2 = document.getElementById('date2');
+        const date3 = document.getElementById('date3');
+
+
+        if(data.time){
+            time1.value = data.time.time1
+            time2.value = data.time.time2
+            time3.value = data.time.time3
+            date1.value = data.time.date1
+            setDate1(data.time.date1)
+            date2.value = data.time.date2
+            setDate2(data.time.date2)
+            date3.value = data.time.date3
+            setDate3(data.time.date3)
+        }
+    }, [])
 
     return (
        <>
@@ -71,7 +93,7 @@ const Time = () => {
                         <select className="form-select drop-form" id="time1">
                             <option value={'morning'} >Morning</option>
                             <option value={'afternoon'} >Afternoon</option>
-                            <option value={'avening'} >Evening</option>
+                            <option value={'evening'} >Evening</option>
                         </select>
                     </div>
                 </div>
@@ -93,7 +115,7 @@ const Time = () => {
                         <select className="form-select drop-form" id="time2">
                             <option value={'morning'} >Morning</option>
                             <option value={'afternoon'} >Afternoon</option>
-                            <option value={'avening'} >Evening</option>
+                            <option value={'evening'} >Evening</option>
                         </select>
                     </div>
                 </div>
@@ -115,7 +137,7 @@ const Time = () => {
                         <select className="form-select drop-form" id="time3">
                             <option value={'morning'} >Morning</option>
                             <option value={'afternoon'} >Afternoon</option>
-                            <option value={'avening'} >Evening</option>
+                            <option value={'evening'} >Evening</option>
                         </select>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import { DataContext } from "../App";
 const Home = () => {
 
     const navigate              = useNavigate();
-    const [ city, setCity ]     = useState({'city':'Roseville, CA'});
+    const [ city, setCity ]     = useState({'groomerLocation':'Roseville, CA'});
     const [ data, setData ]     = useContext(DataContext);
 
     const handleNext = async () => {
@@ -15,14 +15,20 @@ const Home = () => {
 
     const handleChange = async (e) =>{
         let value = e.target.value;
-        let area =  {'city' : value};
+        let area =  {'groomerLocation' : value};
         setCity(area);
        
     }
 
-    // useEffect(()=>{
-    //     console.log(city)
-    // }, [city, setCity])
+    useEffect(()=> {
+        const location = document.getElementById('city-select');
+        console.log(location.value)
+        data.groomerLocation ? location.value = data.groomerLocation : location.value = 'Roseville, CA';
+    },[])
+
+    useEffect(()=>{
+        console.log(data)
+    }, [data, setData])
 
     return (
        <>
@@ -48,9 +54,6 @@ const Home = () => {
                             <option value={'El Dorado Hills, CA'} >El Dorado Hills, CA</option>
                             <option value={'Rancho Cordova, CA'} >Rancho Cordova, CA</option>
                             <option value={'Sacramento, CA'} >Sacramento, CA</option>
-                            <option value={'West Sacramento, CA'} >West Sacramento, CA</option>
-                            <option value={'Davis, CA'} >Davis, CA</option>
-                            <option value={'Woodland, CA'} >Woodland, CA</option>
                         </select>
                     </div>
                 </div>

@@ -35,7 +35,7 @@ const Contact = () => {
 
         let area = data.area;
         let pets = data.pets
-        const updateData = {area, pets, contact};
+        const updateData = {...data, contact};
         setData(updateData);
         navigate('/time')
     }
@@ -44,6 +44,28 @@ const Contact = () => {
     const handleBack = () => {
         navigate('/verifypet')
     }
+
+    useEffect(() => {
+        const firstname = document.getElementById('firstname');
+        const lastname  = document.getElementById('lastname');
+        const street    = document.getElementById('street');
+        const city      = document.getElementById('city');
+        const state     = document.getElementById('state');
+        const zip       = document.getElementById('zip');
+        const phone     = document.getElementById('phone');
+        const email     = document.getElementById('email');
+
+        if(data.contact){
+            firstname.value     = data.contact.firstname;
+            lastname.value      = data.contact.lastname;
+            street.value        = data.contact.street;
+            city.value          = data.contact.city;
+            state.value         = data.contact.state;
+            zip.value           = data.contact.zip;
+            phone.value         = data.contact.phone;
+            email.value         = data.contact.email;
+        }
+    }, [])
 
     return (
        <>

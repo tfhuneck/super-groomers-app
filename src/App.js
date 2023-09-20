@@ -6,16 +6,17 @@ import Selection from './components/Selection';
 import Contact from './components/Contact';
 import Time from './components/Time';
 import VerifyPet from './components/VerifyPet';
-import AddPet from './components/AddPet';
 import Confirm from './components/Confirm';
 import Success from './components/Succes';
 
  
-export const DataContext = createContext();
+export const DataContext = createContext({});
 
 function App() {
 
-  const [ data, setData ] = useState({})
+  const [ data, setData ] = useState({
+
+  })
 
   return (
     <>
@@ -25,7 +26,6 @@ function App() {
           <Routes>
             <Route path='/' element={ <Home />}/>
             <Route path='/select' element={ <Selection />}/>
-            <Route path='/add' element={ <AddPet />}/>
             <Route path='/verifypet' element={<VerifyPet />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/time' element={<Time />} />

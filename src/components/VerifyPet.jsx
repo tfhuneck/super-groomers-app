@@ -9,6 +9,10 @@ const VerifyPet = ()=> {
     const [ data, setData ]             = useContext(DataContext);
 
     useEffect(() => {
+        console.log(data);
+    },[])
+
+    useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
     
@@ -58,14 +62,15 @@ const VerifyPet = ()=> {
                         })}
                     </div>
                     <br /><br />
-                    <div className="row"> 
-                        <div className="col d-flex justify-content-center">
-                            <div className="btn add-pets" onClick={handleAdd}>
-                            <   img src={more} className='add-pet-icon'/>
-                                Add another pet 
-                            </div>
-                        </div>
-                    </div>
+                    {/* Add another Pet disabled for no */}
+                            {/* <div className="row"> 
+                                <div className="col d-flex justify-content-center">
+                                    <div className="btn add-pets" onClick={handleAdd}>
+                                    <   img src={more} className='add-pet-icon'/>
+                                        Add another pet 
+                                    </div>
+                                </div>
+                            </div> */}
                     <div className="row"> 
                         <div className="col d-flex justify-content-center">
                             <button className="btn back" onClick={handleBack}>
