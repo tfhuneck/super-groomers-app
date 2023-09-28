@@ -30,15 +30,14 @@ const Confirm = ()=> {
     }
 
     const handleConfirm = async () =>{
-        // await axios.post('/booking', {
-        //     data
-        // })
-        //     .then(async res => {
-        //         console.log('booking submitted');
-        //     })
-        //     .catch(err => console.log(err));
-        
+        await axios.post('/booking', {data})
+            .then(async res => {
+                console.log('booking submitted');
+            })
+            .catch(err => console.log(err));
         navigate('/success');
+        
+        
     }
 
     return (
